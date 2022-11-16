@@ -6,13 +6,11 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:57:05 by aheddak           #+#    #+#             */
-/*   Updated: 2022/11/07 08:33:36 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:22:41 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
-using namespace std;
+#include <iostream>// input output stream
 /*
 cout = character output
 << print to the terminal
@@ -20,6 +18,7 @@ cin = character input
 >> read user input
 std :: endl can be used to insert a new line
 */
+
 int main (int ac , char **av)
 {
 	int	i;
@@ -27,7 +26,7 @@ int main (int ac , char **av)
 
 	i = 1;
 	if (ac < 2)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 	{
 		while (av[i])
@@ -40,6 +39,8 @@ int main (int ac , char **av)
 			}
 			i++;
 		}
-		std::cout << endl;
+		std::cout <<std::endl;
 	}
 }
+
+

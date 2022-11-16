@@ -6,7 +6,7 @@
 #    By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 08:35:04 by aheddak           #+#    #+#              #
-#    Updated: 2022/11/07 08:38:10 by aheddak          ###   ########.fr        #
+#    Updated: 2022/11/11 07:00:43 by aheddak          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CC		=	g++
 all		:	$(NAME)
 
 $(NAME)	:	$(UTILS)	
-	@$(CC) $(FLAGS) $(UTILS) -o $(NAME)
+	@$(CC) $(FLAGS) $(UTILS) -o $(NAME) -std=c++98
 
 clean :
 	@${RM} $(OBJCT)
