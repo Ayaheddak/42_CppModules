@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:32:54 by aheddak           #+#    #+#             */
-/*   Updated: 2022/11/16 14:55:22 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/11/17 06:56:19 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,19 @@ contact phonebook::GetContact(int i)
 	return(contacts[i]);
 }
 
-void phonebook::displayContacts(int i, contact cont)
+void phonebook::displayContacts(contact cont, int count)
 {
 	std::string str;
-	std::string s(" ---------- ---------- ---------- ---------- \n");
+	int j;
 
-	cont = GetContact(i);
+	j =0;
+	std::string s(" ---------- ---------- ---------- ---------- \n");
 	std::cout << s + "|     index| FirstName|  LastName|  Nickname|\n" + s;
-	std::cout << "|" << std::setw(10) << i + 1 << "|"; 
+	while (j < count)
+	{
+	cont = GetContact(j);
+	std::cout << "|" << std::setw(10) << j + 1 << "|"; 
+		
 	if (cont.getFname().size() > 10)
 	{
 		str = cont.getFname();
@@ -93,17 +98,33 @@ void phonebook::displayContacts(int i, contact cont)
 	}
 	else
 		std::cout << std::setw(10) << cont.getNickName() << "|" << std::endl;
+	j++;
+	}
 	std::cout << s;
 }
 
-void		phonebook::GetFullInfo(int i, contact cont)
+void		phonebook::GetFullInfo(int j, contact cont)
 {
-	cont = GetContact(i);
+	std::string cmd;
+	int	index;
+	char *str;
+	long i;
 
-	std::cout << "First Name : " + cont.getFname() + '\n';
-	std::cout << "last Name : " + cont.getLname() + '\n';
-	std::cout << "Nickname : " + cont.getNickName() + '\n';
-	std::cout << "darkestSecret : " + cont.getDarkSecret() + '\n';
-	std::cout << "Phone number : " + cont.getPhoneNb() + '\n';
+	str = NULL;
+	std::cout << "Choice index : ";
+	std::getline(std::cin, cmd);
+	i = strtol(cmd.c_str(),&str,10);
+	index = i;
+	if ((index >= 1 && index <= j) && !str[0])
+	{
+		cont = GetContact(index - 1);
+		std::cout << "First Name : " + cont.getFname() + '\n';
+		std::cout << "last Name : " + cont.getLname() + '\n';
+		std::cout << "Nickname : " + cont.getNickName() + '\n';
+		std::cout << "darkestSecret : " + cont.getDarkSecret() + '\n';
+		std::cout << "Phone number : " + cont.getPhoneNb() + '\n';	
+	}
+	else
+		std::cout << "Invalid choice !" << std::endl;
 }
 

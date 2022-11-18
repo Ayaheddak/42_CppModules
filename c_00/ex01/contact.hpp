@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:24:40 by aheddak           #+#    #+#             */
-/*   Updated: 2022/11/15 17:56:12 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/11/17 05:54:58 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class contact
 		void setDarkSecret(std::string ds);
 		void setPhoneNb(std::string nb);
 	// **************** Getters ****************************** //
-		// std::string &getFname();  // ? we can declare const after function prototype
 		std::string getFname();
 		std::string getLname();
 		std::string getNickName();
