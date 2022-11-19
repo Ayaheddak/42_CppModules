@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 14:19:04 by aheddak           #+#    #+#             */
-/*   Updated: 2022/11/19 08:47:04 by aheddak          ###   ########.fr       */
+/*   Created: 2022/11/19 12:31:51 by aheddak           #+#    #+#             */
+/*   Updated: 2022/11/19 13:16:43 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include <string>
 #include <iostream>
-
-class Zombie
+int main()
 {
-	private :
-		std::string name;
-	public:
-		void		announce( void );
-		std::string	GetZombie();
-		Zombie(std::string newname);
-		~Zombie();
-};
+	std::string str("HI THIS IS BRAIN ");
+	std::string *stringPTR = &str;
+	std::string	&stringREF = str;
 
-Zombie* newZombie( std::string name );
-void	randomChump( std::string name );
-#endif
+	std::cout << &str << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+	std::cout << str + '\n';
+	std::cout << *stringPTR + '\n';
+	std::cout << stringREF + '\n';
+	return (0);
+}
