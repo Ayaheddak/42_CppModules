@@ -37,24 +37,6 @@ void    ClapTrap::SetName(std::string N)
     return ;
 }
 
-void    ClapTrap::SetHitPoint(unsigned int Hp)
-{
-    _HitPoint = Hp;
-    return ;
-}
-
-void    ClapTrap::SetEnergy(unsigned int En)
-{
-    _Energy = En;
-    return ;
-}
-
-void    ClapTrap::SetAttack(unsigned int A)
-{
-    _Attack = A;
-    return ;
-}
-
 /***************************************************************************************************************/
 
 unsigned int    ClapTrap::GetHitPoint()
