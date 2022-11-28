@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
+/*   By: slahrach <slahrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:24:30 by aheddak           #+#    #+#             */
-/*   Updated: 2022/11/19 21:35:11 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/11/28 00:57:58 by slahrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	Weapon::setType(const std::string &value)
 
 std::string & Weapon::getType()
 {
-	std::cout << type <<std::endl;
 	return (type);
 }
 

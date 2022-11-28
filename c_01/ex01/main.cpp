@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
+/*   By: slahrach <slahrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:48:41 by aheddak           #+#    #+#             */
-/*   Updated: 2022/11/19 12:27:31 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/11/28 00:55:55 by slahrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int main()
 		z[i].announce();	
 		i++;
 	}
-	delete[] z; 
-	// system("leaks brainz");
+	delete[] z;
 }

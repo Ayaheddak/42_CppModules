@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+         #
+#    By: slahrach <slahrach@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 12:32:00 by aheddak           #+#    #+#              #
-#    Updated: 2022/11/19 12:32:25 by aheddak          ###   ########.fr        #
+#    Updated: 2022/11/28 19:24:18 by slahrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	brain
 
 UTILS	=	main.cpp
+
 FLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -f

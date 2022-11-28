@@ -9,7 +9,6 @@ void    replace(char **av)
     std::string r(av[3]);
     std::ifstream infile(av[1]);
     
-   // pos = 0;
     if(search.empty())
     {
         std::cout << "The first string cannot be empty\n";

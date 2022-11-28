@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
+/*   By: slahrach <slahrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:18:59 by aheddak           #+#    #+#             */
-/*   Updated: 2022/11/18 17:41:41 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/11/28 00:40:48 by slahrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ std::string	Zombie::GetZombie()
 	return (name);
 }
 
-Zombie::Zombie(std::string newname):name(newname)
+Zombie::Zombie(std::string& newname):name(newname)
 {
-
+		
 }
 
 Zombie::~Zombie()
