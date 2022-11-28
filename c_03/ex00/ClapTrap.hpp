@@ -12,6 +12,8 @@ class ClapTrap
         unsigned int _Attack;
     
     public :
+    //def constructor
+        ClapTrap();
         ClapTrap(std::string name);
         ClapTrap(ClapTrap &copy);
         ClapTrap& operator =(ClapTrap& obj);

@@ -1,4 +1,8 @@
 #include "ClapTrap.hpp"
+ClapTrap::ClapTrap()
+{
+    std::cout << "Default Constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string N):_Name(N),_HitPoint(10),_Energy(10),_Attack(0)
 {
@@ -63,10 +67,10 @@ void    ClapTrap::attack(const std::string& target)
 {
     if (!GetHitPoint() || !GetEnergy ())
     {
-        std::cout << "Lah ghaleb makaynchi bach n attacki. a zeen " << std::endl;
+        std::cout << "ClapTrap " << _Name << " is unable to attack" << std::endl;
         return ;
     }
-    std::cout << _Name << " attacks " << target << " causing " << _Attack << " points of damage! " << std::endl;
+    std::cout << "ClapTrap "<< _Name << " attacks " << target << " causing " << _Attack << " points of damage! " << std::endl;
     _Energy--;
 }
 
@@ -74,17 +78,23 @@ void    ClapTrap::beRepaired(unsigned int amount)
 {
     if (!GetHitPoint() || !GetEnergy ())
     {
-        std::cout << "Lah ghaleb mshit " << std::endl;
+        std::cout << "ClapTrap " << _Name << " is unable to attack" << std::endl;
         return ;
     }
     _Energy--;
     _HitPoint += amount;
-    std::cout << _Name << " has been repaired, causing " << amount << " points regained!" << std::endl;
+    std::cout << "ClapTrap "<< _Name << " has been repaired, causing " << amount << " points regained!" << std::endl;
 }
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
+    if (GetHitPoint() < amount)
+    {
+        _HitPoint = 0;
+        std::cout << " Enough! m already dead "<< std::endl;
+        return ;
+    }
     _HitPoint -= amount;
-    std::cout << _Name << " took Damage, causing " << amount << " points of damage! " << std::endl;
+    std::cout << "ClapTrap "<< _Name << " took Damage, causing " << amount << " points of damage! " << std::endl;
    
 }

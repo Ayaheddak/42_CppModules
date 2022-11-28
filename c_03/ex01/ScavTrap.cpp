@@ -34,8 +34,9 @@ ScavTrap::~ScavTrap(void)
 
 void    ScavTrap::attack(const std::string& target)
 {
-    std::cout << " ScavTrap ";
-    ClapTrap::attack(target);
+    std::cout << "ScavTrap "<< _Name << " attacks " << target << " causing " << _Attack << " points of damage! " << std::endl;
+//     std::cout << " ScavTrap ";
+//    // ClapTrap::attack(target);
 }
 
 void    ScavTrap::guardGate()
