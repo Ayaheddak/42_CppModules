@@ -1,12 +1,14 @@
 #include "ScavTrap.hpp"
+
 ScavTrap::ScavTrap()
 {
     std::cout << "Scavtrap Default Constructor called " << std::endl;
 }
+
 ScavTrap::ScavTrap(std::string name)
 {
     std::cout << "ScavTrap Constructor called" << std::endl;
-    _Name= name;
+    _Name = name;
     _HitPoint = 100;
     _Energy = 50;
     _Attack = 20;
@@ -32,14 +34,12 @@ ScavTrap& ScavTrap::operator = (ScavTrap& obj)
 
 ScavTrap::~ScavTrap(void)
 {
-    std::cout << "ScavTrap Deconstructor is being deleted" << std::endl;
+    std::cout << "ScavTrap Deconstructor Called" << std::endl;
 }
 
 void    ScavTrap::attack(const std::string& target)
 {
     std::cout << "ScavTrap "<< _Name << " attacks " << target << " causing " << _Attack << " points of damage! " << std::endl;
-//     std::cout << " ScavTrap ";
-//    // ClapTrap::attack(target);
 }
 
 void    ScavTrap::guardGate()
