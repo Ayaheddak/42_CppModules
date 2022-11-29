@@ -6,9 +6,10 @@ Dog::Dog()
     _type = "Dog";
 }
 
-Dog::Dog(std::string type):Animal(type)
+Dog::Dog(std::string type)
 {
     std::cout << "Dog Constructor called" << std::endl;
+    _type = type;
 }
 
 Dog::Dog(const Dog& copy)
