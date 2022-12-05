@@ -1,25 +1,23 @@
 #include "ClapTrap.hpp"
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default Constructor called" << std::endl;
+    std::cout << "ClapTrap Default Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string N):_Name(N),_HitPoint(10),_Energy(10),_Attack(0)
 {
-    std::cout << "Object is being created" << std::endl;
+    std::cout << "ClapTrap Default constructor with arguments " << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &copy)
 {
-    std::cout << "Copy Constructor called" << std::endl;
-    _Name = copy._Name;
-    _HitPoint = copy._HitPoint;
-    _Energy = copy._Energy;
-    _Attack = copy._Attack;
+    std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	*this = copy;
 }
 
 ClapTrap& ClapTrap::operator =(ClapTrap& obj)
 {
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
     _Name =  obj.GetName();
     _HitPoint = obj.GetHitPoint();
     _Energy  = obj.GetEnergy();
@@ -29,7 +27,7 @@ ClapTrap& ClapTrap::operator =(ClapTrap& obj)
 
 ClapTrap::~ClapTrap(void)
 {
-    std::cout << "Object is being deleted" << std::endl;
+   std::cout << "Destructor ClapTrap Called" << std::endl;
 }
 
 /***************************************************************************************************************/

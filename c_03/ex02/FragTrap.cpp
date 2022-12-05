@@ -6,7 +6,7 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(std::string name)
 {
-    std::cout << "FragTrap Constructor called" << std::endl;
+    std::cout << "FragTrap Default constructor with arguments" << std::endl;
     _Name = name;
     _HitPoint = 100;
     _Energy = 100;
@@ -16,14 +16,12 @@ FragTrap::FragTrap(std::string name)
 FragTrap::FragTrap(FragTrap &copy)
 {
     std::cout << "Copy FragTrap Constructor called" << std::endl;
-    _Name = copy._Name;
-    _HitPoint = copy._HitPoint;
-    _Energy = copy._Energy;
-    _Attack = copy._Attack;
+	*this = copy;
 }
 
 FragTrap& FragTrap::operator = (FragTrap& obj)
 {
+	std::cout << "FragTrap Copy assignment operator called" << std::endl;
     _Name =  obj.GetName();
     _HitPoint = obj.GetHitPoint();
     _Energy  = obj.GetEnergy();
@@ -33,7 +31,7 @@ FragTrap& FragTrap::operator = (FragTrap& obj)
 
 FragTrap::~FragTrap(void)
 {
-    std::cout << "FragTrap Deconstructor called " << std::endl;
+    std::cout << "FragTrap destructor called " << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)

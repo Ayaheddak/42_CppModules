@@ -7,7 +7,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string name)
 {
-    std::cout << "ScavTrap Constructor called" << std::endl;
+    std::cout << "ScavTrap Default constructor with arguments" << std::endl;
     _Name = name;
     _HitPoint = 100;
     _Energy = 50;
@@ -17,14 +17,12 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::ScavTrap(ScavTrap &copy)
 {
     std::cout << "Copy ScavTrap Constructor called" << std::endl;
-    _Name = copy._Name;
-    _HitPoint = copy._HitPoint;
-    _Energy = copy._Energy;
-    _Attack = copy._Attack;
+	*this = copy;
 }
 
 ScavTrap& ScavTrap::operator = (ScavTrap& obj)
 {
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
     _Name =  obj.GetName();
     _HitPoint = obj.GetHitPoint();
     _Energy  = obj.GetEnergy();
@@ -34,7 +32,7 @@ ScavTrap& ScavTrap::operator = (ScavTrap& obj)
 
 ScavTrap::~ScavTrap(void)
 {
-    std::cout << "ScavTrap Deconstructor Called" << std::endl;
+    std::cout << "ScavTrap destructor Called" << std::endl;
 }
 
 void    ScavTrap::attack(const std::string& target)
