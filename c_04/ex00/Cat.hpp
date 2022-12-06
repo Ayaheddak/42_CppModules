@@ -8,9 +8,9 @@ class Cat : public Animal
         Cat();
         Cat(std::string type);
         Cat(const Cat& copy);
-        Cat& operator= (Cat& obj);
+        Cat& operator= (const Cat& obj);
         ~Cat(void);
-        void    makeSound()const;
+    	void    makeSound()const;
 };
 
 #endif

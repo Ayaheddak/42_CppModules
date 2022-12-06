@@ -14,13 +14,14 @@ Animal::Animal(std::string type):_type(type)
 Animal::Animal(const Animal& copy)
 {
     std::cout << "Copy Constructor Animal Called" << std::endl;
-    _type = copy._type;
+     _type = copy._type;
+	// *this = copy; //why doesnt work
 }
 
 Animal& Animal::operator = (Animal& obj)
 {
     _type =  obj.getType();
-    return *this;
+    return (*this);
 }
 
 Animal::~Animal(void)
@@ -40,5 +41,5 @@ std::string Animal::getType()const
 }
 void    Animal::makeSound()const
 {
-    std::cout << "i cant makeee a souuuund !!!! " << std::endl;
+    std::cout << "I can't makeee a souuuund  -_- !!!! " << std::endl;
 }

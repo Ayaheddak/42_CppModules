@@ -14,6 +14,6 @@ class Animal
         void    setType(std::string type);
         std::string getType()const;
         virtual ~Animal(void);
-        virtual void    makeSound()const;
+        virtual void    makeSound()const = 0;
 };
 #endif

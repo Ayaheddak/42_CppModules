@@ -1,4 +1,4 @@
-NAME	=	animal
+NAME	=	abstract
 
 UTILS	=	Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 

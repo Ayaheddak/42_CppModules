@@ -14,10 +14,10 @@ Cat::Cat(std::string type):Animal(type)
 Cat::Cat(const Cat& copy)
 {
     std::cout << "Copy Constructor Cat Called" << std::endl;
-    _type = copy._type;
+	*this = copy;
 }
 
-Cat& Cat::operator = (Cat& obj)
+Cat& Cat::operator = (const Cat& obj)
 {
     _type =  obj.getType();
     return *this;
@@ -30,5 +30,5 @@ Cat::~Cat(void)
 
 void Cat::makeSound()const
 {
-    std::cout << "Meeeeeooooow " << std::endl;
+    std::cout << "Meeeeeooooow  ^_^ " << std::endl;
 }

@@ -10,11 +10,11 @@ class WrongAnimal
     public:
         WrongAnimal();
         WrongAnimal(std::string type);
-        WrongAnimal(const WrongAnimal& copy);
+        WrongAnimal(const WrongAnimal& copyl);
         WrongAnimal& operator= (WrongAnimal& obj);
         ~WrongAnimal();
         std::string getType( void ) const;
         void    setType(std::string type);
-        void    makeSound( void )const;
+        void    makeSound( void ) const;
 };
 #endif
