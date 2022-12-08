@@ -1,6 +1,6 @@
 NAME	=	bureaucrat
 
-UTILS	=	Bureaucrat.cpp main.cpp
+UTILS	=	Bureaucrat.cpp main.cpp Form.cpp
 
 FLAGS	=	-Wall -Wextra -Werror
 

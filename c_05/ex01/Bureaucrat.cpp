@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:53:11 by aheddak           #+#    #+#             */
-/*   Updated: 2022/12/07 06:08:45 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/12/08 01:39:47 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,14 @@ const char * Bureaucrat::GradeTooHighException::what (void) const throw()
 const char * Bureaucrat::GradeTooLowException::what (void) const throw()
 {
 	return "Error: Grade Too low ! ";
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	if (form.getSigned == true)
+		std::cout << _name << " signed " << form.getName();
+	else
+		std::cout << _name << " couldn’t sign " << form.getName() << " because " << " ..... " << std::endl;
 }
 
 std::ostream& operator<< (std::ostream& os, const Bureaucrat& obj)

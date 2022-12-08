@@ -10,25 +10,20 @@ Form::Form(std::string name, int signedGrade, int executedGrade) : _name(name), 
 	this->_signed = false;
 }
 
-Form& Form::operator= (const Form& obj)
-{
-	this->_signed = copy._signed;
-	return (*this);
-}
-
 Form::Form(const Form& copy) :_name(copy._name), _sGrade(copy,_sGrade), _eGrade(copy.eGrade)
 {
-	*this = form;
+	*this = copy;
+}
+
+Form& Form::operator= (const Form& obj)
+{
+	this->_signed = obj._signed;
+	return (*this);
 }
 
 Form::~Form()
 {
-	std::cout <<"form's destrocter called \n";
-}
-
-int	Form::getSignedGrade( void ) const
-{
-	return (this->_signedGrade);
+	std::cout <<"form's destructor called \n";
 }
 
 std::string Form::getName( void ) const
@@ -65,17 +60,13 @@ const char * Form::GradeTooLowException::what (void) const throw()
 void	Form::beSigned(Bureaucrat &bur)
 {
 	if (bur.getGrade <= _sGrade)
-	{
-		if (this->_signed == true)
-			this->_signed = false
-		else
-			this->_signed = true;
-	}
+		this->_signed = true;
 	else
 		throw GradeTooLowException();
 }
-// std::ostream& operator<< (std::ostream& os, const Form& obj)
-// {
-// 	os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
-// 	return os;
-// }
+
+std::ostream& operator<< (std::ostream& os, const Form& obj)
+{
+	os << obj.getName() << " " << obj.getEGrade() << obj.getSigned() << obj.getSGrade << std::endl;
+	return os;
+}
