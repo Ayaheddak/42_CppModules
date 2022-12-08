@@ -14,11 +14,10 @@ Animal::Animal(std::string type):_type(type)
 Animal::Animal(const Animal& copy)
 {
     std::cout << "Copy Constructor Animal Called" << std::endl;
-     _type = copy._type;
-	// *this = copy; //why doesnt work
+    *this = copy;
 }
 
-Animal& Animal::operator = (Animal& obj)
+Animal& Animal::operator = (const Animal& obj)
 {
     _type =  obj.getType();
     return (*this);
