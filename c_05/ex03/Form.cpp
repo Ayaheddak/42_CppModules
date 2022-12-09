@@ -70,6 +70,6 @@ void	Form::beSigned(Bureaucrat &bur)
 
 std::ostream& operator<< (std::ostream& os, const Form& obj)
 {
-	os << obj.getName() << " " << obj.getEGrade()<< " " << obj.getSigned() << " " << obj.getSGrade << std::endl;
+		os << obj.getName() << " " << obj.getEGrade()<< " " << obj.getSigned() << " " << obj.getSGrade << std::endl;
 	return os;
 }
