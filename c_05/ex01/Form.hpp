@@ -22,16 +22,16 @@ class Form
 		int			getEGrade(void)const;
 		void		beSigned(Bureaucrat &bur);
 		~Form(void);
-	class GradeTooHighException : public std::exception
-	{
-		public :
-			const char * what (void) const throw();
-	};
-	class GradeTooLowException : public std::exception
-	{
-		public :
-			const char * what (void) const throw();
-	};
+		class GradeTooHighException : public std::exception
+		{
+			public :
+				const char * what (void) const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public :
+				const char * what (void) const throw();
+		};
 };
 std::ostream& operator<< (std::ostream& out, const Form& obj);
 #endif

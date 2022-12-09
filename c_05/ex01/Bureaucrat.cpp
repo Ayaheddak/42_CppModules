@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:53:11 by aheddak           #+#    #+#             */
-/*   Updated: 2022/12/08 01:39:47 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/12/09 18:28:15 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ int Bureaucrat::getGrade(void)const
 	return (_grade);
 }
 
+void	Bureaucrat::setGrade(int grade)
+{
+	_grade = grade;
+}
 void Bureaucrat::decrement(void)
 {
 	_grade++;
@@ -83,8 +87,8 @@ const char * Bureaucrat::GradeTooLowException::what (void) const throw()
 
 void	Bureaucrat::signForm(Form &form)
 {
-	if (form.getSigned == true)
-		std::cout << _name << " signed " << form.getName();
+	if (form.getSigned() == true)
+		std::cout << _name << " signed " << form.getName() << std::endl;
 	else
 		std::cout << _name << " couldn’t sign " << form.getName() << " because " << " ..... " << std::endl;
 }
