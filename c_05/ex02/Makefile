@@ -1,6 +1,6 @@
 NAME	=	bureaucrat
 
-UTILS	=	Bureaucrat.cpp main.cpp Form.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp /
+UTILS	=	Bureaucrat.cpp main.cpp Form.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp\
 			PresidentialPardonForm.cpp
 
 FLAGS	=	-Wall -Wextra -Werror
