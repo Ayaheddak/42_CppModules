@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:53:11 by aheddak           #+#    #+#             */
-/*   Updated: 2022/12/07 08:28:45 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/12/09 15:56:50 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void Bureaucrat::increment(void)
 	if (_grade < 1)
 		throw GradeTooHighException();
 	return ;
+}
+
+void		Bureaucrat::setGrade(int grade)
+{
+	_grade = grade;	
 }
 
 const char * Bureaucrat::GradeTooHighException::what (void) const throw()
