@@ -1,6 +1,7 @@
 #ifndef ROBOTOMYREQUESRFORM_HPP
 #define ROBOTOMYREQUESRFORM_HPP
 #include <cstdlib>
+#include "Form.hpp"
 class Bureaucrat;
 class RobotomyRequestForm : public Form
 {

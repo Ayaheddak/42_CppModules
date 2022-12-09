@@ -13,6 +13,7 @@ Intern::Intern(const Intern& copy)
 Intern& Intern::operator= (const Intern& obj)
 {
 	std::cout << "Intern Copy assignment operator called " << std::endl;
+	(void)obj;
 	return (*this);
 }
 
@@ -28,7 +29,7 @@ const char *Intern::DoesntExistException::what (void) const throw()
 Form *Intern::makeForm(std::string name, std::string target)
 {
 	std::string tab[3]= {"robotomy request", "Presidential pardon", "Shrubbery creation"};
-	Form *objects[3]={new RobotomyRequestForm(), new PresidentialPardonForm(), new ShrubberyCreationForm()};
+	Form *objects[3]={new RobotomyRequestForm(target), new PresidentialPardonForm(target), new ShrubberyCreationForm(target)};
 	Form *res;
 	int i;
 	for (i = 0; i < 3; i++)
@@ -36,6 +37,7 @@ Form *Intern::makeForm(std::string name, std::string target)
 		if (name == tab[i])
 		{
 			res  = objects[i];
+			std::cout << "Intern creates " << res->getName() << std::endl;
 			break ;
 		}
 	}

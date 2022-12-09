@@ -1,6 +1,12 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
+#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <string>
+#include <iostream>
+class Form;
 class Intern
 {
 	public :

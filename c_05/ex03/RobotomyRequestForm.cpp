@@ -1,15 +1,16 @@
 #include "RobotomyRequestForm.hpp"
-RobotomyRequestForm::RobotomyRequestForm(void):Form("home", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(void):Form("RobotomyRequestForm", 72, 45)
 {
 	std::cout << "RobotomyRequestForm constructor called\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target):Form(target, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target):Form("RobotomyRequestForm", 72, 45)
 {
 	std::cout << "RobotomyRequestForm default constructor called\n";
+	_target = target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy):Form(copy._target, copy.getSGrade,copy.getEGrade)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy):Form(copy.getName(), copy.getSGrade() ,copy.getEGrade())
 {
 	std::cout << "RobotomyRequestForm Copy Constructor Called" << std::endl;
 	*this = copy;
@@ -25,9 +26,14 @@ std::string	RobotomyRequestForm::getTarget(void)const
 {
 	return (_target);
 }
-void	RobotomyRequestForm::execute(Bureaucrat const & executor)
+
+RobotomyRequestForm::~RobotomyRequestForm()
 {
-	if (this->getSigned == false || executor.getGrade() > this->getEGrade())
+	std::cout <<" RobotomyRequestForm's destructor called \n";
+}
+void	RobotomyRequestForm::execute(Bureaucrat const & executor)const
+{
+	if (this->getSigned() == false && executor.getGrade() > this->getEGrade())
 		throw GradeTooLowException();
 	std::cout << "Makes some drilling noises" << std::endl;
 	srand(time(0));

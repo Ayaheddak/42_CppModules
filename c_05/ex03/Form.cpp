@@ -11,7 +11,7 @@ Form::Form(std::string name, int signedGrade, int executedGrade) : _name(name), 
 	this->_signed = false;
 }
 
-Form::Form(const Form& copy) :_name(copy._name), _sGrade(copy,_sGrade), _eGrade(copy.eGrade)
+Form::Form(const Form& copy) :_name(copy._name), _sGrade(copy._sGrade), _eGrade(copy._eGrade)
 {
 	std::cout << "Form Copy Constructor Called" << std::endl;
 	*this = copy;
@@ -62,7 +62,7 @@ const char * Form::GradeTooLowException::what (void) const throw()
 
 void	Form::beSigned(Bureaucrat &bur)
 {
-	if (bur.getGrade <= _sGrade)
+	if (bur.getGrade() <= _sGrade)
 		this->_signed = true;
 	else
 		throw GradeTooLowException();
@@ -70,6 +70,6 @@ void	Form::beSigned(Bureaucrat &bur)
 
 std::ostream& operator<< (std::ostream& os, const Form& obj)
 {
-		os << obj.getName() << " " << obj.getEGrade()<< " " << obj.getSigned() << " " << obj.getSGrade << std::endl;
+	os << "Name : "<< obj.getName() << " , Execute grade : " << obj.getEGrade()<< " , signed status : " << obj.getSigned() << " , Signed grade : " << obj.getSGrade();
 	return os;
 }
